@@ -12,6 +12,7 @@ import java.lang.reflect.Type;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class Main {
     public static  final ObjectMapper mapper = new ObjectMapper();
@@ -26,10 +27,14 @@ public class Main {
         HttpGet request = new HttpGet("https://cat-fact.herokuapp.com/facts");
         CloseableHttpResponse response = httpClient.execute(request);
         Arrays.stream(response.getAllHeaders()).forEach(System.out::println);
-        String body = new String(response.getEntity().getContent().readAllBytes(), StandardCharsets.UTF_8);  System.out.println(body);
+
 
         List <FactsAboutCat> factsAboutCats = mapper.readValue(response.getEntity().getContent(), new TypeReference<List<FactsAboutCat>>() {});
 //factsAboutCats.forEach(System.out::println);
+ factsAboutCats.stream()
+        .filter(value ->  value.isUsed() == false)
+
+        .forEach(System.out::println);
             }
         }
 

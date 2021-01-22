@@ -8,6 +8,9 @@ public class Status {
 
     }
 
+    public Status() {
+    }
+
     public boolean isVerified() {
         return verified;
     }

@@ -4,10 +4,10 @@ public class FactsAboutCat {
     private final Status status;
     private final String type;
     private final boolean deleted;
-    private final String _id;
+    private final String userId;
     private final String user;
     private final String text;
-    private final int __v;
+    private final int v;
     private final String source;
     private final String updatedAt;
     private final String createdAt;
@@ -18,10 +18,10 @@ public class FactsAboutCat {
             @JsonProperty("status") Status status,
             @JsonProperty("type") String type,
             @JsonProperty("deleted") boolean deleted,
-            @JsonProperty("_id") String _id,
+            @JsonProperty("_id") String userId,
             @JsonProperty("user") String user,
             @JsonProperty("text") String text,
-            @JsonProperty("__v") int __v,
+            @JsonProperty("__v") int v,
             @JsonProperty("source") String source,
             @JsonProperty("updatedAt") String updatedAt,
             @JsonProperty("createdAt") String createdAt,
@@ -30,10 +30,10 @@ public class FactsAboutCat {
         this.status = status;
         this.type = type;
         this.deleted = deleted;
-        this._id = _id;
+        this.userId = userId;
         this.user = user;
         this.text = text;
-        this.__v = __v;
+        this.v = v;
         this.source = source;
         this.updatedAt = updatedAt;
         this.createdAt = createdAt;
@@ -54,7 +54,7 @@ public class FactsAboutCat {
     }
 
     public String get_id() {
-        return _id;
+        return userId;
     }
 
     public String getUser() {
@@ -66,7 +66,7 @@ public class FactsAboutCat {
     }
 
     public int get__v() {
-        return __v;
+        return v;
     }
 
     public String getSource() {
@@ -91,10 +91,10 @@ public class FactsAboutCat {
                 "status=" + status +
                 ", type='" + type + '\'' +
                 ", deleted=" + deleted +
-                ", _id='" + _id + '\'' +
+                ", _id='" + userId + '\'' +
                 ", user='" + user + '\'' +
                 ", text='" + text + '\'' +
-                ", __v=" + __v +
+                ", __v=" + v +
                 ", source='" + source + '\'' +
                 ", updatedAt='" + updatedAt + '\'' +
                 ", createdAt='" + createdAt + '\'' +
